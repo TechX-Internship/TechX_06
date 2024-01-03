@@ -1,113 +1,124 @@
-import Image from 'next/image'
+import "bootstrap/dist/css/bootstrap.css"
+import style from "./section.module.css"
+
+import Image from "next/image"
+import About_Section from "./components/about-section/about-section"
+import Special_Button from "./components/special-button/special-button"
+
+import { Titan_One } from "next/font/google"
+import { Outfit } from "next/font/google"
+import Feature_Card from "./components/feature-card/feature-card"
+import Swiper_Card from "./components/swiper-card/swiper-card"
+
+
+const titan_one = Titan_One({
+  subsets: ["latin"],
+  weight: "400",
+  style: "normal"
+})
+
+const outfit_400 = Outfit({
+  subsets: ["latin"],
+  style: "normal",
+  weight: "400"
+})
+
+const outfit_500 = Outfit({
+  subsets: ["latin"],
+  style: "normal",
+  weight: "500"
+})
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <section className={`${style["main-banner"]} postion-relative`}>
+        <div className="container">
+          <div className="row align-items-center vh-100">
+            <div className="col">
+              <h1 className={titan_one.className}>Bringing&nbsp;in<br />the&nbsp;Luscious<br />Ice&nbsp;Creams</h1>
+              <ul className={`${outfit_400.className} mt-4 mb-5`}>
+                <li>Ice Cream</li>
+                <li>Shakes</li>
+                <li>Mastani</li>
+                <li>Softies</li>
+              </ul>
+              <Special_Button text="Our products" color="#000" bgcolor="#fff" />
+            </div>
+            <div className="col">
+              <div className={`${style.ellipse} container-fluid ratio ratio-1x1 position-relative rounded rounded-circle z-0`}>
+                <Image src="/girl.png" alt="Cheerful Teenager With Ice Cream" width={100} height={100} className="vh-100 object-fit-contain position-absolute translate-middle top-50 start-50" style={{ objectPosition: "bottom" }} />
+                <Image src="/Flavorful-Ice-Creams-1.png" alt="Flavorful Ice Creams" width={100} height={100} className="d-inline w-50 h-auto object-fit-contain position-absolute translate-middle-x top-50 start-0" />
+                <Image src="/icecream-cones-banner-1.png" alt="Flavorful Ice Creams" width={100} height={100} className="d-inline w-50 h-auto object-fit-contain position-absolute  top-0 start-50 z-n1" style={{ rotate: "25.341deg" }} />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <About_Section />
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <section className={style["feature-section"]}>
+        <div className="container d-flex flex-column justify-content-center align-items-center vh-100">
+          <h2 className="text-center mb-5">Make&nbsp;your&nbsp;life<br />sweeter&nbsp;with&nbsp;us!</h2>
+          <div className="row">
+            <div className="col">
+              <Feature_Card align="left" />
+              <Feature_Card align="left" />
+            </div>
+            <div className="col-6">
+              <Image src="/image-ice-cream2-1.png" alt="Ice Cream" width={100} height={100} className="w-100 h-100 object-fit-contain" />
+            </div>
+            <div className="col">
+              <Feature_Card align="right" />
+              <Feature_Card align="right" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      <section className={style["product-section"]}>
+        <div className="container d-flex flex-column justify-content-center align-items-center vh-100">
+          <h2 className="text-center">Explore&nbsp;The<br />Deliciousness</h2>
+          <p className="text-center">Whatever the mood, whatever the situation, Dairy Don is always set to race your tastebuds<br />
+            From Mouth-watering Softies, Wholesome Sundaes, Flavourful Mastani and to Delish Thick Shakes.<br />
+            Dive into the super deliciousness with Dairy Don s range of ice cream delights.</p>
+          <div className="my-4 row w-100">
+            <div className="col">
+              <Swiper_Card />
+            </div>
+            <div className="col">
+              <Swiper_Card />
+            </div>
+            <div className="col">
+              <Swiper_Card />
+            </div>
+          </div>
+          <Special_Button text="Explore More" bgcolor="#E65E5C" color="#FFF" />
+        </div>
+      </section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <section className={style["info-section"]}>
+        <div className="container">
+          <div className="row align-items-center min-vh-100">
+            <div className="col">
+              <h2>Serving Delicious Since 1981</h2>
+              <p className="mt-4 mb-5">It all started in the year 1981 when D.D. Yeola family establishes an Ice Cream
+                Parlour at Mahatma Gandhi Road Nashik (Maharashtra) India, with intent to source Softies,
+                Thick Shakes and Mouth-watering Ice Creams.  Today, our product lineup includes
+                many-flavoured ice creams, lip-smacking thick shakes, irresistible softies and many more to come. Well-known for our speciality in Ice Creams, we strive to source better without exception.
+              </p>
+              <Special_Button text="Learn More" color="#FFF" bgcolor="#E65E5C" />
+            </div>
+            <div className="col">
+              <div className="container w-75 ratio ratio-1x1 posistion-relative">
+                <Image src="/image-2.png" alt="Ice Cream" width={100} height={100} className="rounded rounded-5 ratio ratio-1x1 object-fit-cover" />
+                <Image src="/tiramisu-2-1.png" alt="Delicious home made ice cream scooped on a cone" width={100} height={100} className="w-50 h-auto object-fit-contain position-absolute translate-middle top-100 start-0" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }

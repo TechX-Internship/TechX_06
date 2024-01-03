@@ -10,7 +10,7 @@ const titan_one = Titan_One({
 export default function Navbar() {
   return (
     <nav className={titan_one.className}>
-      <ul className="d-flex justify-content-center">
+      <ul className="d-flex justify-content-center m-0">
         <li className="p-3">Home</li>
         <li className="p-3">About us</li>
         <li className="p-3">Product</li>

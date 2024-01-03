@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,10 +23,29 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+h1,
+h2,
+h3,
+h4 {
+  --bs-heading-color: #E65E5C !important;
+  font-family: 'Titan One', sans-serif !important;
+  text-transform: uppercase !important;
+}
+
+h2 {
+  font-size: 50px !important;
+}
+
+p {
+  color: #666;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
 }
